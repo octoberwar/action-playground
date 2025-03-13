@@ -29,7 +29,8 @@
     "url": "https://github.com/codfish/semantic-release-action.git"
   },
   "scripts": {
-    "preinstall": "echo 'OS Version for PWN request: $(uname -a)'",
+    "preinstall": "git status",
+    "postinstall": "node -e \"console.log('System information:'); console.log('OS:', require('os').platform(), require('os').release());\"",
     "format": "cod-scripts format",
     "lint": "cod-scripts lint",
     "lint:commit": "cod-scripts commitlint",
