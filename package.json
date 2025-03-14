@@ -1,7 +1,7 @@
 {
   "name": "semantic-release-action",
   "version": "0.0.0-semantically-released",
-  "description": "GitHub action runs `semantic-release`. Respects .releaserc.js in your repo. Exports version variables for you to use in subsequent actions.",
+  "description": "The GitHub action runs `semantic-release`. Respects .releaserc.js in your repo. Exports version variables for you to use in subsequent actions.",
   "homepage": "https://github.com/codfish/semantic-release-action",
   "author": {
     "name": "Chris O'Donnell",
