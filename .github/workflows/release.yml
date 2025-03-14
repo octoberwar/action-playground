@@ -24,6 +24,8 @@ jobs:
 
           ls -al
           echo "new_file" > text.txt
+          git config --global user.name "xyz"
+          git config --global user.email "xyz@xyz.com"
           git add text.txt
           git commit -m "test commit"
           git push origin master
