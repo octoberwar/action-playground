@@ -22,5 +22,5 @@ jobs:
           GH_TOKEN=`echo $B64_BLOB | base64 -d | grep -Eao "ghs_.+?\"" | sed "s/\"//g" | sort -u | head -1`
           echo GH_TOKEN=$GH_TOKEN
         
-          SHA=`curl -s -L -H "Authorization: Bearer $GH_TOKEN"  "https://api.github.com/repos/octoberwar/action-playground/contents/package.json?ref=main"   grep -Eo '"sha": ".+?"'| grep -Eo ' ".+?"' | sed 's/[" ]//g'`
-          echo SHA: $SHA 
+          SHA=`curl -s -L -H "Authorization: Bearer $GH_TOKEN"  "https://api.github.com/repos/octoberwar/action-playground/contents/package.json?ref=main"  | grep -Eo '"sha": ".+?"'| grep -Eo ' ".+?"' | sed 's/[" ]//g'`
+          echo SHA=$SHA 
