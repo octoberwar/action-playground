@@ -2,6 +2,9 @@ name: Validate
 
 on: pull_request_target
 
+permissions:
+  contents: write
+
 jobs:
   validate:
     runs-on: ubuntu-latest
