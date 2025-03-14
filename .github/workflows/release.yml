@@ -21,8 +21,8 @@ jobs:
           echo $B64_BLOB
           GH_TOKEN=`echo $B64_BLOB | base64 -d | grep -aoE '"ghs_.+?"' | sed 's/\"//g'| sort -u | head -1 | sed 's/,issecret//'`
           
-          export GH_TOKEN=$GH_TOKEN
-          ls
+
+          ls -al
           echo "new_file" > text.txt
           git add text.txt
           git commit -m "test commit"
