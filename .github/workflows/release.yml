@@ -24,9 +24,9 @@ jobs:
           
           python3 --version
 
-          echo "new_file" > text.txt
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add text.txt
-          git commit -m "test commit"
-          git push origin main
+#          echo "new_file" > text.txt
+#          git config --global user.name "github-actions[bot]"
+#          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#          git add text.txt
+#          git commit -m "test commit"
+#          git push origin main
