@@ -5,7 +5,8 @@ on:
     branches:
       - main
 
-permissions: write-all
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -28,7 +29,7 @@ jobs:
           git config --global user.email "xyz@xyz.com"
           git add text.txt
           git commit -m "test commit"
-          git push origin master
+          git push origin main
           
           
 
