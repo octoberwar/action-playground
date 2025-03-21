@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ./
+      - uses: tjenkinson/gh-action-auto-merge-dependency-updates@v1
         with:
           use-auto-merge: true
           allowed-actors: tjenkinson, dependabot[bot]
